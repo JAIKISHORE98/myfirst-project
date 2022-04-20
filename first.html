@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <style>
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 8;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0, 0, 0);
+          background-color: rgba(0, 0, 0, 0.4);
+        }
+        .modal-content {
+          margin: 50px auto;
+          border: 1px solid #999;
+          width: 60%;
+        }
+        h2
+        {
+          margin-left: 600px;
+          margin-bottom: 0px;
+          font-weight: 400;
+          color: #999;
+        }
+        h4
+        {
+            margin-left: 200px;
+          margin-top: 20px;
+          font-weight: 400;
+          font-size: 40px;
+          color: rgb(0, 0, 0);
+        }
+        .h2-1
+        {
+          margin-left: 325px;
+          font-weight: 400;
+          color: #999;
+        }
+        p
+        {
+          margin-left: 350px;
+          font-weight: 50;
+          color:  white;
+        }
+        span {
+          color: #666;
+          display: block;
+          padding: 0 0 5px;
+        }
+        form {
+          padding: 25px;
+          margin: 25px;
+          box-shadow: 0 2px 5px #f5f5f5;
+          background: #eee;
+        }
+        input,
+        textarea {
+          width: 60%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 1px solid #1c87c9;
+          outline: none;
+        }
+        .contact-form button {
+          width: 50%;
+          padding: 10px;
+          margin-left: 200px;
+          margin-top: 30px;
+          border: none;
+          background: #1c87c9;
+          font-size: 16px;
+          font-weight: 400;
+          color: #fff;
+        }
+        button:hover {
+          background: gray;
+          color: white;
+        }
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 40px;
+          font-weight: bold;
+          margin-left: 20px;
+          margin-top: -7px;
+          margin-right: -14px;
+        }
+        .buttonthree {
+            background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          outline: double;
+          outline-color:white;
+          border-right: none;
+          border-left: none;
+          border-bottom: #02274a 1px solid;
+          font-size: 20px;
+          cursor: pointer;
+          margin-left: 400px;
+          
+        }
+
+        
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
+        button.button {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          outline: double;
+          outline-color:white;
+          border-right: none;
+          border-left: none;
+          border-bottom: #02274a 1px solid;
+          font-size: 20px;
+          cursor: pointer;
+          margin-left: 600px;
+          margin-top: 20px;
+        }
+        .buttontwo {
+          background-color: #4CAF50;
+          color: white;
+          padding: 12px 20px;
+          border: none;
+          border-radius: 4px;
+          outline: double;
+          outline-color:white;
+          border-right: none;
+          border-left: none;
+          border-bottom: #02274a 1px solid;
+          font-size: 20px;
+          cursor: pointer;
+          margin-left: 50px;
+          margin-top: 20px;
+        }
+        button.button:hover {
+          border-bottom: #a99567 1px solid;
+          color: #000000;
+        }
+        .container
+        {
+        margin-left:330px;
+        margin-right:380px;
+        margin-top:20px;
+        background-color:#f2f2f2;
+        }
+        .row1
+        {
+        margin-left:300px;
+        margin-top:-30x;
+        }
+        .row5
+        {
+        margin-left:300px;
+        margin-top:-25px;
+  
+        width:500px;
+        }
+        .col-10
+        {
+        margin-bottom:-25px;
+        margin-left:100px;
+        margin-top:50px;
+        }
+      .field
+      {
+        margin-left: 100px;
+        margin-right: 100px;
+        height: 600px;
+        background-color: #f2f2f2;
+      }
+      .rowcol
+      {
+        margin-left: 100px;
+        margin-top:  100px;
+      }
+      .roll
+      {
+        margin-left: 400px;
+        
+      }
+      .coll
+      {
+        margin-left: 50px;
+        
+      }
+      .popup
+      {
+        margin-top: -20px;
+        margin-left: -100px;
+        color: #1c87c9;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+      }
+      </style>
+<title>Disallow Bootstrap Modal to Open on Click Outside Using HTML</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h2>JOB APPLICATION FORM</h2>
+<fieldset class="container">
+	
+        <div class="col-10">
+            <label> First name : </label>
+        </div>
+        <div class="row1">
+            <input type="text" id="fname" required>
+        </div>
+        <div class="col-10">
+            <label> Last name : </label>
+        </div >
+        <div class="row1">
+            <input type="text" id="lname" required>
+        </div>
+        <div class="col-10">
+            <label for="email">Email:</label>
+        </div>
+        <div class="row1">
+            <input type="email" id="mail" placeholder="it should contain @,." required>
+        </div>
+        <div class="col-10">
+            <label for="mobile">Mobile:</label>
+        </div>
+        <div class="row1">
+            <input type="tel" id="mobile"  placeholder="only 10 digits are allowed" required>
+        </div>
+        <div class="col-10">
+            <label for="dob">Date Of Birth:</label>
+        </div>
+        <div class="row1">
+            <input type="Date" id="dbay" required>
+        </div>
+        <div class="col-10">
+            <label for="address">Address:</label>
+        </div>
+        <div class="row5">
+            <textarea name="address" id="address" cols="6" rows="2" ></textarea>
+        </div>
+        <div class="col-10">
+            <label for="city">City:</label>
+        </div>
+        <div class="row1">
+            <input type="text" id="city"  maxlength="10" >
+        </div>
+        <div class="col-10">
+            <label for="pincode">Area PIN:</label>
+        </div>
+        <div class="row1">
+            <input type="number" id="pin"  maxlength="6" >
+        </div>
+        <div class="col-10">
+            <label for="state">State:</label>
+        </div>
+        <div class="row1">
+            <input type="text" id="state" name="state" required>
+        </div>
+        <div class="col-10">
+            <label for="qualification" required >Qualification:</label>
+        </div>
+        
+        <div class="row1">
+            <select name="qualification" id="qualification" required>
+                            <option value=" ">Select Qualification:</option>
+                            <option value="Graduation">Graduation</option>
+                            <option value="B.E.">BE</option>
+                            <option value="MTech.">MTech</option>
+                            <option value="MCA">MCA</option>
+                            <option value="BCA">BCA</option>
+            </select>
+        </div>
+        <br>
+        <div class="col-10">
+            <label for="specialization" >Specialization:</label>
+        </div>
+        
+        <div class="row1">
+            <select id="specialization" required>
+                            <option value=" ">Select Specialization:</option>
+                            <option value="ECE">ECE</option>
+                            <option value="CSE">CSE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="MECH">MECH</option>
+                            <option value="CIVIL">CIVIL</option>
+            </select>
+        </div>
+        <br>
+        <div class="col-10">
+            <label for="file">upload photo :</label>
+        </div>
+        
+        <div class="row1">
+            <input type="file" accept="image/*"  id="file" onclick="loadFile(EventSource)"  name="file" required>
+        </div>
+</fieldset>  
+	<button type="button" id="MybtnPreventHTML" class="button" data-target="#MymodalPreventHTML" data-toggle="modal" data-backdrop="static" data-keyboard="false">PREVIEW</button>
+    <button type="button" class="buttontwo">SUBMIT</button>
+	<!-- .modal -->
+	<div class="modal fade" id="MymodalPreventHTML">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<fieldset class="field">
+					<button type="button" class="close" data-dismiss="modal">×</button>
+                 
+					<h4 class="modal-title">Notification</h4>                                                             
+			
+				
+					
+                        <label class="coll"> FIRST NAME : </label>
+                <div class="popup">
+                  <label class="roll" id="demo"></label>
+                      </div>
+                        <br>
+                        <label class="coll"> LAST NAME : </label>
+                  <div class="popup">
+                        <label class="roll" id="demo1" style:"color:blue"></label>
+                </div>
+                        <br>
+            
+                        <label class="coll"> EMAIL : </label>
+                  <div class="popup">
+                        <label class="roll" id="email"></label>
+                </div>
+                        <br>
+                      
+                        <label class="coll"> MOBILE NUMBER : </label>
+                  <br>
+                  <div class="popup">
+                        <label class="roll" id="mnumber"></label>
+                </div>
+                        <br>
+                        <label class="coll"> DATE OF BIRTH : </label>
+                  <br>
+                  <div class="popup">
+                        <label class="roll" id="dob"></label>
+                </div>
+                        <br>
+                        <label class="coll"> ADDRESS : </label>
+                  <div class="popup">
+                        <label class="roll" id="add"></label>
+                </div>
+                        
+                        <br>
+                        <label class="coll"> CITY : </label>
+                  <div class="popup">
+                        <label class="roll" id="town"></label>
+                </div>
+                        <br>
+                      
+                        <label class="coll"> PINCODE : </label>
+                  <div class="popup">
+                         <label class="roll" id="pincode"></label>
+                </div>
+                        <br>
+                      
+                        <label class="coll"> STATE : </label>
+                  <div class="popup">
+                        <label class="roll" id="sta"></label>
+                </div>
+                        <br>
+                        
+                        <label class="coll"> QUALIFICATION : </label>
+                  <br>
+                  <div class="popup">
+                        <label class="roll" id="quali"></label>
+                </div>
+                        <br>
+                        <label class="coll"> SPECIALIZATION : </label>
+                  <br>
+                  <div class="popup">
+                        <label class="roll" id="speci"></label>
+                </div>
+                        <br>
+                        <label class="coll"> PHOTO : </label>
+                  <div class="popup">
+                        <img class="roll" id="output" width="200"/>
+                </div>
+             </fieldset>  
+				<div class="modal-footer">
+					<button type="button" class="buttonthree" data-dismiss="modal">Close</button> 
+				</div>
+			 
+            <script>
+             
+                let modalBtns = [...document.querySelectorAll(".button")];
+                modalBtns.forEach(function (btn) {
+                  btn.onclick = function () {
+                    var inputValue = document.getElementById("fname");
+                    var labelValue = document.getElementById("demo");
+                    labelValue.innerHTML=inputValue.value;
+                    var inputValue1 = document.getElementById("lname");
+                    var labelValue1 = document.getElementById("demo1");
+                    labelValue1.innerHTML=inputValue1.value ? inputValue1.value : "";
+                    var inputValue2 = document.getElementById("mail");
+                    var labelValue2 = document.getElementById("email");
+                    labelValue2.innerHTML=inputValue2.value;
+                    var inputValue3 = document.getElementById("mobile");
+                    var labelValue3 = document.getElementById("mnumber");
+                    labelValue3.innerHTML=inputValue3.value;
+                    var inputValue4 = document.getElementById("dbay");
+                    var labelValue4 = document.getElementById("dob");
+                    labelValue4.innerHTML=inputValue4.value;
+                    var inputValue5 = document.getElementById("address");
+                    var labelValue5 = document.getElementById("add");
+                    labelValue5.innerHTML=inputValue5.value;
+                    var inputValue6 = document.getElementById("city");
+                    var labelValue6 = document.getElementById("town");
+                    labelValue6.innerHTML=inputValue6.value;
+                    var inputValue7 = document.getElementById("pin");
+                    var labelValue7 = document.getElementById("pincode");
+                    labelValue7.innerHTML=inputValue7.value;
+                    var inputValue8 = document.getElementById("state");
+                    var labelValue8 = document.getElementById("sta");
+                    labelValue8.innerHTML=inputValue8.value;
+                    var inputValue9 = document.getElementById("qualification");
+                    var labelValue9 = document.getElementById("quali");
+                    labelValue9.innerHTML=inputValue9.value;
+                    var inputValue10 = document.getElementById("specialization");
+                    var labelValue10 = document.getElementById("speci");
+                    labelValue10.innerHTML=inputValue10.value;
+                
+                  
+var loadFile = function(EventSource) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(EventSource.target.files[0]);
+};
+                    };
+                  
+                });
+                window.onclick = function (event) { 
+                  if (event.target.className === "modal") {
+                    event.target.style.display = "none";
+                  }
+                };
+              </script>
+            </body>
+          </html>
